@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Cats",
+  "version": "1.0.0",
+  "description": "Cats are better so use them as your images",
+  "action": {
+    "default_title": "Click to show an alert",
+    "default_icon": { // optional
+      "16": "icon/icon16.png", // optional
+      "48": "icon/icon48.png", // optional
+      "128": "icon/icon128.png" // optional
+    }
+  },
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*"],
+    "css": ["style.css"],
+    "js": ["jquery-3.5.1.min.js"]
+  }]
+}
